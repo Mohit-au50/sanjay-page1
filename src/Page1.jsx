@@ -2,9 +2,7 @@ import React from "react";
 import leftImage from "./assets/left-stats.svg";
 import rightImage from "./assets/right-stats.svg";
 
-const App = () => {
-  console.log(window.innerWidth);
-  console.log(window.innerHeight);
+const Page1 = () => {
   return (
     <section className="bg-[#f8f7f2] w-full py-36">
       <div className="max-w-[1200px] mx-auto h-full">
@@ -76,4 +74,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Page1;
