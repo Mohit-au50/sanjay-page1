@@ -4,7 +4,7 @@ import DesktopNav from "./DesktopNav";
 
 const Navbar = () => {
   return (
-    <header className="bg-yellow-400 h-20">
+    <header className="h-20 border-b">
       <div className="container mx-auto h-full">
         {/* Mobile menu */}
         <MobileNav />

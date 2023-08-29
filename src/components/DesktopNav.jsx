@@ -4,7 +4,7 @@ import logo from "../assets/topmate.svg";
 const DesktopNav = () => {
   const [subMenu, setSubMenu] = useState(false);
   return (
-    <nav className="hidden h-full lg:flex lg:items-center lg:justify-between font-semibold px-5 xl:bg-green-500">
+    <nav className="hidden h-full lg:flex lg:items-center lg:justify-between font-semibold px-5">
       <a href="http://" target="_blank">
         <img src={logo} alt="" className="h-10" />
       </a>
@@ -69,11 +69,11 @@ const DesktopNav = () => {
       </div>
 
       <div className="flex gap-x-5">
-        <button className="py-4 px-4 text-sm rounded-md border font-bold tracking-wide">
+        <button className="py-4 px-5 text-sm rounded-md border font-bold tracking-wide">
           Login
         </button>
 
-        <button className="py-4 px-4 text-sm rounded-md text-white bg-black font-bold tracking-wide">
+        <button className="py-4 px-5 text-sm rounded-md text-white bg-black font-bold tracking-wide">
           Sign up free
         </button>
       </div>
