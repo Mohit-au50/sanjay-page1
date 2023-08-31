@@ -4,15 +4,13 @@ import DesktopNav from "./DesktopNav";
 
 const Navbar = () => {
   return (
-    <header className="h-20 border-b">
-      <div className="container mx-auto h-full">
-        {/* Mobile menu */}
-        <MobileNav />
+    <div className="container mx-auto h-20">
+      {/* Mobile menu */}
+      <MobileNav />
 
-        {/* Desktop menu */}
-        <DesktopNav />
-      </div>
-    </header>
+      {/* Desktop menu */}
+      <DesktopNav />
+    </div>
   );
 };
 
