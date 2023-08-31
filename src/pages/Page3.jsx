@@ -1,28 +1,35 @@
 import React from "react";
-import final from "./assets/final.svg";
+import final from "../assets/final.svg";
+import finalMob from "../assets/final-mob.svg";
 
 const Page3 = () => {
   return (
-    <section className="bg-white w-full py-36">
-      <div className="max-w-[1200px] mx-auto h-full flex">
-        <div className="w-1/2">
-          <button className="font-bold px-6 py-3 bg-[#dbd1fc] rounded-full">
+    <section className="bg-white w-full py-14 lg:py-36">
+      <div className="max-w-[1200px] mx-auto h-full flex flex-col lg:flex-row">
+        <div className="order-2 lg:w-1/2 p-4">
+          <button className="lg:font-bold font-medium text-xs lg:text-base px-6 py-3 bg-[#dbd1fc] rounded-full">
             For Organization
           </button>
-          <h2 className="text-6xl font-bold mt-5">
+          <h2 className="lg:text-6xl text-3xl font-bold lg:mt-5 my-4">
             Build your business on top of Topmate
           </h2>
-          <h3 className="text-xl font-medium text-[#434343] mt-5">
+          <h3 className="lg:text-xl text-sm font-medium text-[#434343] my-5 lg:mt-5">
             Use our white-label solution to create your own marketplace.
             Everything that's best for your business, now powered by the best in
             business
           </h3>
-          <button className="mt-8 font-medium text-xl rounded-lg bg-black text-white py-3 px-5">
+          <button className="lg:mt-8 my-4 font-bold lg:text-xl text-lg rounded-lg bg-black text-white py-3 px-6 lg:px-5">
             Request Access
           </button>
         </div>
-        <div className="w-1/2 h-[500px] flex justify-end">
-          <img src={final} alt="" className="h-full" />
+
+        <div className="lg:hidden p-4">
+          <img src={final} alt="" className="w-full h-full" />
+        </div>
+        <div className="hidden lg:block w-1/2 h-[500px]">
+          <div className="w-full h-full flex justify-end">
+            <img src={final} alt="" />
+          </div>
         </div>
       </div>
     </section>
