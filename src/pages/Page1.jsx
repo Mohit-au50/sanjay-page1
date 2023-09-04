@@ -1,91 +1,296 @@
-import React from "react";
-import leftImage from "../assets/left-stats.svg";
-import leftImageMob from "../assets/left-stats-mob.svg";
-import rightImage from "../assets/right-stats.svg";
-import rightImageMob from "../assets/right-stats-mob.svg";
+import React, { useState } from "react";
+import { dataChip } from "../data/data";
+import { productsChip } from "../data/products";
+import { healthChip } from "../data/health";
+import { studyChip } from "../data/study";
+import { techChip } from "../data/tech";
+import { youChip } from "../data/you";
 
 const Page1 = () => {
+  const [value, setValue] = useState("select");
+  const [data, setData] = useState(true);
+  const [products, setProducts] = useState(false);
+  const [mentalHealth, setMentalHealth] = useState(false);
+  const [studyAbroad, setStudyAbroad] = useState(false);
+  const [tech, setTech] = useState(false);
+  const [you, setYou] = useState(false);
+  const [model, setModel] = useState(false);
+
+  const handleState = (setState) => {
+    setData(false);
+    setProducts(false);
+    setMentalHealth(false);
+    setStudyAbroad(false);
+    setTech(false);
+    setYou(false);
+    setState(true);
+    setModel(false);
+  };
+
   return (
-    <section className="bg-[#f8f7f2] w-full py-14 lg:py-36">
-      <div className="max-w-[1200px] mx-auto h-full">
-        <div className="lg:h-[465px] flex justify-between">
-          <div className="left-side flex-1 h-full p-4">
-            <h2 className="text-3xl my-4 lg:text-6xl">
-              Calculate your
-              <br />
-              <span>
-                <strong>earning potential</strong>
-              </span>
-            </h2>
-            <h4 className="lg:text-lg lg:w-[72%] mt-9 font-medium">
-              Calculated using your LinkedIn profile and comparing based on
-              similar profiles on topmate
-            </h4>
-            <form className="lg:w-[62%]">
-              <div className="relative mt-12 flex items-center lg:text-xl">
-                <input
-                  type="text"
-                  className="h-12 lg:h-[60px] rounded-lg border-2 border-black w-full px-6"
-                  placeholder="Your linkdin profile link"
-                />
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="w-8 h-8 lg:w-10 lg:h-10 absolute right-4"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </div>
-              <div className="mt-5 py-1 flex lg:text-xl font-medium">
-                <p>
-                  No sign up required.
-                  <a href="#" className="text-green-600">
-                    {" "}
-                    See example
-                  </a>
-                </p>
-              </div>
-            </form>
+    <section className="bg-white w-full py-14 lg:py-24 overflow-hidden">
+      <div className="max-w-[1200px] mx-auto h-full p-4 lg:p-0">
+        <h1 className="text-3xl lg:text-6xl font-medium text-center">
+          Designed for people
+          <strong> making impact</strong>
+        </h1>
+
+        <div className="relative lg:hidden my-10">
+          <div
+            className="bg-[#141414] text-white rounded w-full h-12 text-lg font-medium grid place-items-center"
+            onClick={() => setModel(true)}
+          >
+            {value}
           </div>
-          <div className="lg:h-full lg:order-2 hidden lg:block">
-            <div className="imgae w-[380px] h-full bg-gradient-to-r from-green-500 to-green-900 rounded-[40px]"></div>
-          </div>
+          {model && (
+            <div className="h-36 rounded absolute top-0 z-10 overflow-y-scroll">
+              <button
+                onClick={() => {
+                  handleState(setData);
+                  setValue("Data");
+                }}
+                className={`w-full h-12 rounded font-medium text-lg
+            ${data ? "bg-[#141414] text-white" : "bg-[#f0f0f0]"}`}
+              >
+                Data
+              </button>
+              <button
+                onClick={() => {
+                  handleState(setProducts);
+                  setValue("Products");
+                }}
+                className={`h-12 w-full font-medium text-lg
+            ${products ? "bg-[#141414] text-white" : "bg-[#f0f0f0]"}`}
+              >
+                Products
+              </button>
+              <button
+                onClick={() => {
+                  handleState(setMentalHealth);
+                  setValue("Mental Health");
+                }}
+                className={`h-12 w-full font-medium text-lg
+            ${mentalHealth ? "bg-[#141414] text-white" : "bg-[#f0f0f0]"}`}
+              >
+                Mental Health
+              </button>
+              <button
+                onClick={() => {
+                  handleState(setStudyAbroad);
+                  setValue("Study Abroad");
+                }}
+                className={`h-12 w-full font-medium text-lg
+            ${studyAbroad ? "bg-[#141414] text-white" : "bg-[#f0f0f0]"}`}
+              >
+                Study Abroad
+              </button>
+              <button
+                onClick={() => {
+                  handleState(setTech);
+                  setValue("Tech");
+                }}
+                className={`h-12 w-full font-medium text-lg
+            ${tech ? "bg-[#141414] text-white" : "bg-[#f0f0f0]"}`}
+              >
+                Tech
+              </button>
+              <button
+                onClick={() => {
+                  handleState(setYou);
+                  setValue("You 🙌🏻");
+                }}
+                className={`h-12 w-full font-medium text-lg
+            ${you ? "bg-[#141414] text-white" : "bg-[#f0f0f0]"}`}
+              >
+                You 🙌🏻
+              </button>
+            </div>
+          )}
         </div>
 
-        {/* second div for grid boxes */}
-        <div className="lg:mt-[60px] p-4">
-          <div className="flex flex-col gap-y-6 lg:flex-row lg:gap-x-14 lg:h-[390px]">
-            {/* left image */}
-            <div className="lg:hidden">
-              <img
-                src={leftImageMob}
-                alt=""
-                className="w-full h-full object-cover rounded-lg"
-              />
-            </div>
+        <div className="hidden lg:flex gap-x-5 lg:justify-center my-10 h-10 lg:h-14">
+          <button
+            onClick={() => handleState(setData)}
+            className={`lg:px-10 px-4 rounded-full font-medium text-lg
+            ${data ? "bg-[#141414] text-white" : "bg-[#f0f0f0]"}`}
+          >
+            Data
+          </button>
+          <button
+            onClick={() => handleState(setProducts)}
+            className={`lg:px-10 px-4 rounded-full font-medium text-lg
+            ${products ? "bg-[#141414] text-white" : "bg-[#f0f0f0]"}`}
+          >
+            Products
+          </button>
+          <button
+            onClick={() => handleState(setMentalHealth)}
+            className={`lg:px-10 px-4 rounded-full font-medium text-lg
+            ${mentalHealth ? "bg-[#141414] text-white" : "bg-[#f0f0f0]"}`}
+          >
+            Mental Health
+          </button>
+          <button
+            onClick={() => handleState(setStudyAbroad)}
+            className={`lg:px-10 px-4 py-3 rounded-full font-medium text-lg
+            ${studyAbroad ? "bg-[#141414] text-white" : "bg-[#f0f0f0]"}`}
+          >
+            Study Abroad
+          </button>
+          <button
+            onClick={() => handleState(setTech)}
+            className={`lg:px-10 px-4 py-3 rounded-full font-medium text-lg
+            ${tech ? "bg-[#141414] text-white" : "bg-[#f0f0f0]"}`}
+          >
+            Tech
+          </button>
+          <button
+            onClick={() => handleState(setYou)}
+            className={`lg:px-10 px-4 py-3 rounded-full font-medium text-lg
+            ${you ? "bg-[#141414] text-white" : "bg-[#f0f0f0]"}`}
+          >
+            You 🙌🏻
+          </button>
+        </div>
 
-            <div className="hidden lg:block">
-              <img
-                src={leftImage}
-                alt=""
-                className="w-full h-full rounded-lg"
-              />
-            </div>
+        <div className="flex flex-col items-center gap-y-9 lg:flex:row lg:gap-x-9 justify-center lg:my-14">
+          {data && (
+            <>
+              {dataChip.map((item, index) => (
+                <div
+                  key={index}
+                  className="relative h-[320px] w-[240px] px-7 rounded-xl overflow-hidden shadow-lg"
+                >
+                  <div
+                    className="absolute top-0 left-0 h-28 w-full"
+                    style={{ background: `${item.bg}` }}
+                  ></div>
+                  <div className="h-[120px] w-[120px] mx-auto absolute left-1/2 -translate-x-1/2 top-12">
+                    <img src={item.image} alt="" className="rounded-full" />
+                  </div>
+                  <div className="relative top-[170px] text-center">
+                    <h1 className="text-2xl font-bold my-2">{item.name}</h1>
+                    <p>{item.about}</p>
+                  </div>
+                </div>
+              ))}
+            </>
+          )}
 
-            {/* right image */}
-            <div className="lg:hidden">
-              <img src={rightImageMob} alt="" className="h-full" />
-            </div>
+          {products && (
+            <>
+              {productsChip.map((item, index) => (
+                <div
+                  key={index}
+                  className="relative h-[320px] w-[240px] px-7 rounded-xl overflow-hidden shadow-lg"
+                >
+                  <div
+                    className="absolute top-0 left-0 h-28 w-full"
+                    style={{ background: `${item.bg}` }}
+                  ></div>
+                  <div className="h-[120px] w-[120px] mx-auto absolute left-1/2 -translate-x-1/2 top-12">
+                    <img src={item.image} alt="" className="rounded-full" />
+                  </div>
+                  <div className="relative top-[170px] text-center">
+                    <h1 className="text-2xl font-bold my-2">{item.name}</h1>
+                    <p>{item.about}</p>
+                  </div>
+                </div>
+              ))}
+            </>
+          )}
 
-            <div className="hidden lg:block">
-              <img src={rightImage} alt="" className="h-full" />
-            </div>
-          </div>
+          {mentalHealth && (
+            <>
+              {healthChip.map((item, index) => (
+                <div
+                  key={index}
+                  className="relative h-[320px] w-[240px] px-7 rounded-xl overflow-hidden shadow-lg"
+                >
+                  <div
+                    className="absolute top-0 left-0 h-28 w-full"
+                    style={{ background: `${item.bg}` }}
+                  ></div>
+                  <div className="h-[120px] w-[120px] mx-auto absolute left-1/2 -translate-x-1/2 top-12">
+                    <img src={item.image} alt="" className="rounded-full" />
+                  </div>
+                  <div className="relative top-[170px] text-center">
+                    <h1 className="text-2xl font-bold my-2">{item.name}</h1>
+                    <p>{item.about}</p>
+                  </div>
+                </div>
+              ))}
+            </>
+          )}
+
+          {studyAbroad && (
+            <>
+              {studyChip.map((item, index) => (
+                <div
+                  key={index}
+                  className="relative h-[320px] w-[240px] px-7 rounded-xl overflow-hidden shadow-lg"
+                >
+                  <div
+                    className="absolute top-0 left-0 h-28 w-full"
+                    style={{ background: `${item.bg}` }}
+                  ></div>
+                  <div className="h-[120px] w-[120px] mx-auto absolute left-1/2 -translate-x-1/2 top-12">
+                    <img src={item.image} alt="" className="rounded-full" />
+                  </div>
+                  <div className="relative top-[170px] text-center">
+                    <h1 className="text-2xl font-bold my-2">{item.name}</h1>
+                    <p>{item.about}</p>
+                  </div>
+                </div>
+              ))}
+            </>
+          )}
+
+          {tech && (
+            <>
+              {techChip.map((item, index) => (
+                <div
+                  key={index}
+                  className="relative h-[320px] w-[240px] px-7 rounded-xl overflow-hidden shadow-lg"
+                >
+                  <div
+                    className="absolute top-0 left-0 h-28 w-full"
+                    style={{ background: `${item.bg}` }}
+                  ></div>
+                  <div className="h-[120px] w-[120px] mx-auto absolute left-1/2 -translate-x-1/2 top-12">
+                    <img src={item.image} alt="" className="rounded-full" />
+                  </div>
+                  <div className="relative top-[170px] text-center">
+                    <h1 className="text-2xl font-bold my-2">{item.name}</h1>
+                    <p>{item.about}</p>
+                  </div>
+                </div>
+              ))}
+            </>
+          )}
+
+          {you && (
+            <>
+              {youChip.map((item, index) => (
+                <div
+                  key={index}
+                  className="relative h-[320px] w-[240px] px-7 rounded-xl overflow-hidden shadow-lg"
+                >
+                  <div
+                    className="absolute top-0 left-0 h-28 w-full"
+                    style={{ background: `${item.bg}` }}
+                  ></div>
+                  <div className="h-[120px] w-[120px] mx-auto absolute left-1/2 -translate-x-1/2 top-12">
+                    <img src={item.image} alt="" className="rounded-full" />
+                  </div>
+                  <div className="relative top-[170px] text-center">
+                    <h1 className="text-2xl font-bold my-2">{item.name}</h1>
+                    <p>{item.about}</p>
+                  </div>
+                </div>
+              ))}
+            </>
+          )}
         </div>
       </div>
     </section>

@@ -1,21 +1,17 @@
 import React from "react";
-import homeBtn from "../assets/home.svg";
-import homeBtnMob from "../assets/homeMob.svg";
-import final from "../assets/hero-1.svg";
-import star from "../assets/star.svg";
-import user1 from "../assets/user-1.png";
-import user2 from "../assets/user-2.webp";
-import user3 from "../assets/user-3.webp";
-import user4 from "../assets/user-4.png";
+import homeBtn from "../assets/section0/supporterBanner.svg";
+import landing1 from "../assets/section0/landingImg1.svg";
+import star from "../assets/section0/star.svg";
+import user1 from "../assets/section0/user1.webp";
+import user2 from "../assets/section0/user2.webp";
+import user3 from "../assets/section0/user3.webp";
+import user4 from "../assets/section0/user4.webp";
 
 const Page0 = () => {
   return (
     <section className="bg-[#f8f7f2] w-full pt-24 lg:py-36">
       <div className="max-w-[1200px] mx-auto h-full">
-        <div className="lg:hidden px-4">
-          <img src={homeBtnMob} alt="" className="h-full" />
-        </div>
-        <div className="hidden lg:block">
+        <div className="px-4 lg:px-0">
           <img src={homeBtn} alt="" className="h-full" />
         </div>
 
@@ -66,7 +62,7 @@ const Page0 = () => {
 
           <div className="hidden order-2 lg:block h-[500px]">
             <div className="w-full h-full flex justify-end">
-              <img src={final} alt="" />
+              <img src={landing1} alt="" />
             </div>
           </div>
         </div>

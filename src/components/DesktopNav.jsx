@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../assets/topmate.svg";
+import logo from "../assets/header/topmate.svg";
 
 const DesktopNav = () => {
   const [subMenu, setSubMenu] = useState(false);

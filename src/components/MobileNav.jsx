@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import logo from "../assets/logo.svg";
-import logoFull from "../assets/topmate.svg";
+import logo from "../assets/header/logo.svg";
+import logoFull from "../assets/header/topmate.svg";
 
 const MobileNav = () => {
   const [menu, setMenu] = useState(false);
   const [subMenu, setSubMenu] = useState(false);
-  console.log(menu);
+
   return (
-    <nav className="lg:hidden h-full flex items-center justify-between px-5 relative">
+    <nav className="lg:hidden h-full flex items-center justify-between px-5">
       <a href="http://" target="_blank">
         <img src={logo} alt="" className="w-7 h-7 sm:hidden" />
         <img src={logoFull} alt="" className="h-10 hidden sm:block" />
